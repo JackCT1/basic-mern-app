@@ -2,6 +2,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -10,12 +13,12 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use(cors());
 
-CONNECTION_URI = process.env.MONGO_URI;
-PORT = process.env.PORT || 3000;
+const CONNECTION_URI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3000;
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
+    await mongoose.connect(CONNECTION_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -26,4 +29,3 @@ const startServer = async () => {
 };
 
 startServer();
-mongoose.set("useFindAndModify", false);
