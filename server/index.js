@@ -12,3 +12,18 @@ app.use(cors());
 
 CONNECTION_URI = process.env.MONGO_URI;
 PORT = process.env.PORT || 3000;
+
+const startServer = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    app.listen(PORT, console.log(`Server is listening on port ${PORT}`));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+startServer();
+mongoose.set("useFindAndModify", false);
