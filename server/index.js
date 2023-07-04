@@ -9,3 +9,6 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use(cors());
+
+CONNECTION_URI = process.env.MONGO_URI;
+PORT = process.env.PORT || 3000;
