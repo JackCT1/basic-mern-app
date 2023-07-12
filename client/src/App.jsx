@@ -11,7 +11,7 @@ const App = () => {
         <Typography variant="h2" align="center">
           The Jack Thomas App
         </Typography>
-        <img src={memories} alt="Logo" height="60" />
+        <img src={memories} alt="Logo" height="300" />
       </AppBar>
       <Grow in>
         <Container>
