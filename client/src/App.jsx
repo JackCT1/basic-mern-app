@@ -1,5 +1,6 @@
-import React from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+
+import memories from "./images/memories";
 
 const App = () => {
   return (
@@ -8,15 +9,22 @@ const App = () => {
         <Typography variant="h2" align="center">
           The Jack Thomas App
         </Typography>
-        <img src={} alt="Logo" height="60" />
+        <img src={memories} alt="Logo" height="60" />
       </AppBar>
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid
+            container
+            justify="space-between"
+            alignItems="stretch"
+            spacing={3}
+          >
             <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
-            <Grid item xs={12} sm={4}></Grid>
+            <Grid item xs={12} sm={4}>
+              <Form />
+            </Grid>
           </Grid>
         </Container>
       </Grow>
