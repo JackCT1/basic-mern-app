@@ -9,11 +9,11 @@ const App = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">
+      <AppBar className={classes.appBar} position="static" color="inherit">
+        <Typography className={classes.heading} variant="h2" align="center">
           The Jack Thomas App
         </Typography>
-        <img src={memories} alt="Logo" height="300" />
+        <img className={classes.image} src={memories} alt="Logo" height="300" />
       </AppBar>
       <Grow in>
         <Container>
