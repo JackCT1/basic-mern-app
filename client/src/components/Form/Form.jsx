@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useStyles from "./styles";
+import FileBase from "react-file-base64";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 
 const Form = () => {
@@ -59,6 +60,15 @@ const Form = () => {
           onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
         />
       </form>
+      <div className={classes.fileInput}>
+        <FileBase
+          type="file"
+          multiple={false}
+          onDone={(base64) =>
+            setPostData({ ...postData, selectedFile: base64 })
+          }
+        />
+      </div>
     </Paper>
   );
 };
