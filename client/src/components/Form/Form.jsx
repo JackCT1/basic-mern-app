@@ -14,6 +14,8 @@ const Form = () => {
   const classes = useStyles();
 
   const handleSubmit = () => {};
+
+  const clear = () => {};
   return (
     <Paper className={classes.paper}>
       <form
@@ -59,16 +61,35 @@ const Form = () => {
           value={postData.tags}
           onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
         />
+        <div className={classes.fileInput}>
+          <FileBase
+            type="file"
+            multiple={false}
+            onDone={(base64) =>
+              setPostData({ ...postData, selectedFile: base64 })
+            }
+          />
+        </div>
+        <Button
+          className={classes.buttonSubmit}
+          variant="container"
+          color="primary"
+          size="large"
+          type="submit"
+          fullWidth
+        >
+          Submit
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          size="small"
+          onClick={clear}
+          fullWidth
+        >
+          Clear
+        </Button>
       </form>
-      <div className={classes.fileInput}>
-        <FileBase
-          type="file"
-          multiple={false}
-          onDone={(base64) =>
-            setPostData({ ...postData, selectedFile: base64 })
-          }
-        />
-      </div>
     </Paper>
   );
 };
