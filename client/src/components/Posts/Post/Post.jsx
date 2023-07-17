@@ -48,7 +48,15 @@ const Post = ({ post }) => {
         </Typography>
       </CardContent>
       <CardActions className={CardActions}>
-        <Button size="small" color="primary"></Button>
+        <Button size="small" color="primary" onClick={() => {}}>
+          <ThumbUpAltIcon fontSize="small" />
+          Like
+          {post.likeCount}
+        </Button>
+        <Button size="small" color="primary" onClick={() => {}}>
+          <DeleteIcon fontSize="small" />
+          Delete
+        </Button>
       </CardActions>
     </Card>
   );
