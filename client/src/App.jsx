@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "./actions/posts";
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
-import memories from "./images/memories.png";
+import jackThomas from "./images/jackthomas.jpeg";
 import useStyles from "./styles";
 
 const App = () => {
@@ -22,7 +22,12 @@ const App = () => {
         <Typography className={classes.heading} variant="h2" align="center">
           The Jack Thomas App
         </Typography>
-        <img className={classes.image} src={memories} alt="Logo" height="300" />
+        <img
+          className={classes.image}
+          src={jackThomas}
+          alt="Logo"
+          height="300"
+        />
       </AppBar>
       <Grow in>
         <Container>
