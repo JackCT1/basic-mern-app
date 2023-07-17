@@ -32,6 +32,24 @@ const Post = ({ post }) => {
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
+      <div className={classes.details}>
+        <Typography variant="body2" color="textSecondary">
+          {post.tags.map((tag) => `#${tag} `)}
+        </Typography>
+      </div>
+      <CardContent>
+        <Typography
+          className={classes.title}
+          variant="h5"
+          color="textSecondary"
+          gutterBottom
+        >
+          {post.message}
+        </Typography>
+      </CardContent>
+      <CardActions className={CardActions}>
+        <Button size="small" color="primary"></Button>
+      </CardActions>
     </Card>
   );
 };
