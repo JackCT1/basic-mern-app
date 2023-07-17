@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 
-import postRoutes from "./routes/posts";
+import postRoutes from "./routes/posts.js";
 
 dotenv.config();
 
