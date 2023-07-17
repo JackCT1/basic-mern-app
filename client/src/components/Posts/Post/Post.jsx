@@ -27,6 +27,11 @@ const Post = ({ post }) => {
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
+      <div className={classes.overlay2}>
+        <Button style={{ color: "white" }} size="small" onClick={() => {}}>
+          <MoreHorizIcon fontSize="default" />
+        </Button>
+      </div>
     </Card>
   );
 };
