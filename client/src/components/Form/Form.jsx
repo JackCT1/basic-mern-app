@@ -5,7 +5,7 @@ import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { createPost } from "../../actions/posts";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({
     creator: "",
     title: "",
