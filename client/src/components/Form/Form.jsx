@@ -42,7 +42,7 @@ const Form = () => {
           }
         />
         <TextField
-          name="creator"
+          name="title"
           variant="outlined"
           label="Title"
           fullWidth
@@ -50,7 +50,7 @@ const Form = () => {
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
         <TextField
-          name="creator"
+          name="message"
           variant="outlined"
           label="Message"
           fullWidth
@@ -60,7 +60,7 @@ const Form = () => {
           }
         />
         <TextField
-          name="creator"
+          name="tags"
           variant="outlined"
           label="Tags"
           fullWidth
