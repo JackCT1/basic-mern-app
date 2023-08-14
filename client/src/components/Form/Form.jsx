@@ -54,7 +54,7 @@ const Form = ({ currentId, setCurrentId }) => {
         onSubmit={handleSubmit}
       >
         <Typography variant="h6">
-          {currentId ? "Editing" : "Creating"} a Post
+          {currentId ? "Edit" : "Create"} a Post
         </Typography>
         <TextField
           name="creator"
@@ -96,14 +96,14 @@ const Form = ({ currentId, setCurrentId }) => {
           <FileBase
             type="file"
             multiple={false}
-            onDone={(base64) =>
+            onDone={({ base64 }) =>
               setPostData({ ...postData, selectedFile: base64 })
             }
           />
         </div>
         <Button
           className={classes.buttonSubmit}
-          variant="container"
+          variant="contained"
           color="primary"
           size="large"
           type="submit"
