@@ -22,7 +22,10 @@ const Post = ({ post, setCurrentId }) => {
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
-        image={post.selectedFile}
+        image={
+          post.selectedFile ||
+          "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+        }
         title={post.title}
       />
       <div className={classes.overlay}>
@@ -39,7 +42,7 @@ const Post = ({ post, setCurrentId }) => {
             setCurrentId(post._id);
           }}
         >
-          <MoreHorizIcon fontSize="default" />
+          <MoreHorizIcon fontSize="medium" />
         </Button>
       </div>
       <div className={classes.details}>
@@ -60,7 +63,7 @@ const Post = ({ post, setCurrentId }) => {
           {post.message}
         </Typography>
       </CardContent>
-      <CardActions className={CardActions}>
+      <CardActions className={classes.cardActions}>
         <Button
           size="small"
           color="primary"
